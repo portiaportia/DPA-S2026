@@ -1,0 +1,21 @@
+*********** Displaying a Beatles Cassett ***************
+Playing song 1: A hard Day's Night
+Playing song 2: I should Have Known Better
+Forward to song 4
+Playing song 4: I'm Happy Just To Dance With You
+Playing song 5: And I Love Her
+Rewinding to song 5
+Rewinding to song 4
+Rewinding to song 3
+Playing song 3: If I Fell
+
+*********** Displaying an Oasis CD ***************
+Playing: 1: Hello
+Playing: 2: Hey Now!
+Playing: 3: She's Electric
+Playing: 4: Wonderwall
+Playing: 5: Champagne Supernova
+Skipping back and playing: Wonderwall
+Skipping back and playing: She's Electric
+Skipping back and playing: Hey Now!
+Playing: 3: She's Electric

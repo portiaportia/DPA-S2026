@@ -1,0 +1,27 @@
+
+***** Welcome to our outfit creator! ***** 
+
+Enter the Season: 
+1 Winter
+2 Spring
+3 Summer
+4 Fall
+4
+
+You can wear: 
+A green and blue apron dress
+
+Are you satisfied with your answer (Y)es or (N)o: n
+
+Enter the Season: 
+1 Winter
+2 Spring
+3 Summer
+4 Fall
+1
+
+You can wear: 
+A maroon wrap dress
+
+Are you satisfied with your answer (Y)es or (N)o: y
+Have a fashinable day!

@@ -1,0 +1,19 @@
+What would you like to do:
+1. View All Assignments
+2. View Project Related Assignments
+
+***** Project Related Assignments *****
+- Requirements - Part 1: Complete project proposal, competitive analysis and personas
+- Requirements - Part 2: Complete document and all requirements
+- Design Document Diagrams: Create UML project diagrams
+- Design Document Complete: Create an outline of the UI, the Data Storage, and update UML diagrams
+- SCRUM Board: Create an outline of all project tasks
+- Project Impementation: Complete all code for the project
+- Testing: Create JUnit tests for the project
+
+What would you like to do:
+1. View All Assignments
+2. View Project Related Assignments
+3. View Design Pattern Assignments
+4. View Git Assignments
+5. Quit
