@@ -1,12 +1,15 @@
 package state;
 
-public class HuluState implements State {
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class HuluState extends Application implements State {
 	private TV tv;
-	private String[] movies = { "Cars", "Cinderella", "Wall-E", "ET" };
-	private String[] tvShows = { "sesame street", "care bears", "loney tunes" };
 
 	public HuluState(TV tv) {
 		this.tv = tv;
+		movies = new ArrayList<>(Arrays.asList("Cars", "Cinderella", "Wall-E", "ET"));
+		tvShows = new ArrayList<>(Arrays.asList("Sesame Street", "Care Bars", "Loney Tunes"));
 	}
 
 	@Override
@@ -30,16 +33,17 @@ public class HuluState implements State {
 	@Override
 	public void pressMovieButton() {
 		System.out.println("\nHulu Movies:");
-		for (int i = 0; i < movies.length; i++) {
-			System.out.println("- " + movies[i]);
-		}
+		displayMovies();
 	}
 
 	@Override
 	public void pressTVButton() {
 		System.out.println("\nHulu TV Shows:");
-		for (int i = 0; i < tvShows.length; i++) {
-			System.out.println("- " + tvShows[i]);
-		}
+		displayTVShows();
+	}
+
+	@Override
+	public void watch(String title) {
+		super.watch(title);
 	}
 }

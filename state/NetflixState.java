@@ -1,12 +1,15 @@
 package state;
 
-public class NetflixState implements State {
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class NetflixState extends Application implements State {
 	private TV tv;
-	private String[] movies = { "The Land Before Time", "Frozen", "The Little Mermaid", "Ice Age" };
-	private String[] tvShows = { "Peppa Pig", "My Little Pony", "Garfield", "Teenage Mutant Ninja Turtles" };
 
 	public NetflixState(TV tv) {
 		this.tv = tv;
+		movies = new ArrayList<>(Arrays.asList("The Land Before Time", "Frozen", "The Little Mermaid", "Ice Age"));
+		tvShows = new ArrayList<>(Arrays.asList("Peppa Pig", "My Little Pony", "Garfield", "Teenage Mutant Ninja Turtles"));
 	}
 
 	@Override
@@ -30,17 +33,13 @@ public class NetflixState implements State {
 	@Override
 	public void pressMovieButton() {
 		System.out.println("\nNetflix Movies:");
-		for (int i = 0; i < movies.length; i++) {
-			System.out.println("- " + movies[i]);
-		}
+		displayMovies();
 	}
 
 	@Override
 	public void pressTVButton() {
 		System.out.println("\nNetflix TV Shows:");
-		for (int i = 0; i < tvShows.length; i++) {
-			System.out.println("- " + tvShows[i]);
-		}
+		displayTVShows();
 	}
 
 }

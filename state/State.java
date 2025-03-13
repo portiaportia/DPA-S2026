@@ -10,4 +10,6 @@ public interface State {
 	public void pressMovieButton();
 
 	public void pressTVButton();
+
+	public void watch(String title);
 }

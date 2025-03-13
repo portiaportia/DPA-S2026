@@ -12,7 +12,7 @@ public class Assignment {
 	}
 
 	public boolean hasTopic(Topic topic) {
-		return this.topic == topic;
+		return this.topic == topic || topic == Topic.ALL;
 	}
 
 	public String toString() {

@@ -9,15 +9,29 @@ import java.util.Scanner;
  * Responsible for reading file
  */
 public class FileReader {
+    private static final String TOPS_FILE_NAME = "singleton/txt/tops.txt";
+    private static final String BOTTOMS_FILE_NAME = "singleton/txt/bottoms.txt";
+    private static final String WHOLES_FILE_NAME = "singleton/txt/wholes.txt";
+
+    public static ArrayList<ClothingItem> getTops(){
+        return getClothing(TOPS_FILE_NAME);
+    }
+
+    public static ArrayList<ClothingItem> getBottoms(){
+        return getClothing(BOTTOMS_FILE_NAME);
+    }
+
+    public static ArrayList<ClothingItem> getwholes(){
+        return getClothing(WHOLES_FILE_NAME);
+    }
 
     /**
      * Reads in the file and creates a list of clothing
      * 
      * @param fileName The file to read through
-     * @param part     The type of clothes: (top, bottom, or whole outfit)
      * @return A list of clothing items
      */
-    public static ArrayList<ClothingItem> getClothing(String fileName, ClothingPart part) {
+    private static ArrayList<ClothingItem> getClothing(String fileName) {
         ArrayList<ClothingItem> clothing = new ArrayList<ClothingItem>();
 
         try {
@@ -26,7 +40,7 @@ public class FileReader {
             while (reader.hasNextLine()) {
                 String line = reader.nextLine();
                 String[] data = line.split(":");
-                ClothingItem item = new ClothingItem(data[0], part, data[1].trim());
+                ClothingItem item = new ClothingItem(data[0], data[1].trim());
                 String[] itemSeasons = data[2].split(",");
 
                 for (Season season : Season.values()) {

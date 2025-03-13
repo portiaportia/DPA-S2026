@@ -1,19 +1,18 @@
 package singleton;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Random;
 
 public class OutfitCreator {
 	private static OutfitCreator outfitCreator;
-	private ArrayList<ClothingItem> tops;
-	private ArrayList<ClothingItem> bottoms;
-	private ArrayList<ClothingItem> wholes;
+	private HashMap<ClothingPart, ArrayList<ClothingItem>> clothing = new HashMap<>();
 	private Random rand;
 
 	private OutfitCreator() {
-		tops = FileReader.getClothing("singleton/txt/tops.txt", ClothingPart.TOP);
-		bottoms = FileReader.getClothing("singleton/txt/bottoms.txt", ClothingPart.BOTTOM);
-		wholes = FileReader.getClothing("singleton/txt/wholes.txt", ClothingPart.WHOLE);
+		clothing.put(ClothingPart.TOP, FileReader.getTops());
+		clothing.put(ClothingPart.BOTTOM, FileReader.getBottoms());
+		clothing.put(ClothingPart.WHOLE, FileReader.getwholes());
 		rand = new Random();
 	}
 
@@ -24,25 +23,25 @@ public class OutfitCreator {
 		return outfitCreator;
 	}
 
-	private ClothingItem getRandClothingItem(ArrayList<ClothingItem> items, Season season) {
-		ArrayList<ClothingItem> seasonClothing = new ArrayList<ClothingItem>();
+	private ClothingItem getRandClothingItem(ClothingPart part, Season season) {
+		ArrayList<ClothingItem> clothingList = new ArrayList<>();
 
-		for (ClothingItem item : items) {
+		for (ClothingItem item : clothing.get(part)) {
 			if (item.hasSeason(season)) {
-				seasonClothing.add(item);
+				clothingList.add(item);
 			}
 		}
 
-		int index = rand.nextInt(seasonClothing.size());
-		return seasonClothing.get(index);
+		int index = rand.nextInt(clothingList.size());
+		return clothingList.get(index);
 	}
 
 	public String getOutfit(Season season) {
 		if (rand.nextInt(2) == 0) {
-			return "A " + getRandClothingItem(tops, season).toString() + " and a "
-					+ getRandClothingItem(bottoms, season).toString();
+			return "A " + getRandClothingItem(ClothingPart.TOP, season).toString() + " and a "
+					+ getRandClothingItem(ClothingPart.BOTTOM, season).toString();
 		} else {
-			return "A " + getRandClothingItem(wholes, season).toString();
+			return "A " + getRandClothingItem(ClothingPart.WHOLE, season).toString();
 		}
 	}
 

@@ -4,13 +4,11 @@ import java.util.ArrayList;
 
 public class ClothingItem {
     private String name;
-    private ClothingPart part;
     private String color;
     private ArrayList<Season> seasons = new ArrayList<Season>();
 
-    public ClothingItem(String name, ClothingPart part, String color) {
+    public ClothingItem(String name, String color) {
         this.name = name;
-        this.part = part;
         this.color = color;
     }
 

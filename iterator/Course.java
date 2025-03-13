@@ -20,8 +20,8 @@ public class Course {
 		count++;
 	}
 
-	public AssignmentIterator createIterator() {
-		return new AssignmentIterator(assignments);
+	public AssignmentIterator createIterator(Topic topic) {
+		return new AssignmentIterator(assignments, topic);
 	}
 
 	public String toString() {

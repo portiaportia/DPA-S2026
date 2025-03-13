@@ -34,4 +34,9 @@ public class HomeState implements State {
 		System.out.println("Home: You must pick an app to show tv shows.");
 	}
 
+	@Override
+	public void watch(String title) {
+		System.out.println("You need to enter an application like Netflix or Hulu to watch a program.");
+	}
+
 }

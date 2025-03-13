@@ -49,4 +49,8 @@ public class TV {
 		state.pressTVButton();
 	}
 
+	public void watch(String title){
+		state.watch(title);
+	}
+
 }

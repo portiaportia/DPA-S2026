@@ -52,10 +52,13 @@ public class CourseDriver {
 		csce247.addAssignment("Testing",
 				"Create JUnit tests for the project",
 				Topic.PROJECT);
-		csce247.addAssignment("Adapter Design Pattern",
-				"Implement the Adapter Design Pattern to build a CD to Cassette Converter", Topic.DESIGN_PATTERN);
-		csce247.addAssignment("Template Design Pattern", "Implement the Template Design Pattern to simulate a worker",
-				Topic.DESIGN_PATTERN);
+		csce247.addAssignment("Ptototyping",
+				"Design the UI of the Project",
+				Topic.PROJECT);
+		csce247.addAssignment("GUI Implementation",
+				"Code a Graphical User Interface for your project",
+				Topic.PROJECT);
+		
 
 		options[0] = "View All Assignments";
 		options[1] = "View Project Related Assignments";
@@ -112,13 +115,11 @@ public class CourseDriver {
 	 * @param topic The topic to show the assignments for
 	 */
 	private void displayAssignments(Topic topic) {
-		AssignmentIterator assignmentIterator = csce247.createIterator();
+		AssignmentIterator assignmentIterator = csce247.createIterator(topic);
 
 		while (assignmentIterator.hasNext()) {
 			Assignment assignment = assignmentIterator.next();
-			if (topic == Topic.ALL || assignment.hasTopic(topic)) {
-				System.out.println("- " + assignment);
-			}
+			System.out.println("- " + assignment);
 		}
 		System.out.println();
 	}
